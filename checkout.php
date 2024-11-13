@@ -324,7 +324,6 @@ if(!isset($_SESSION['cart_p_id'])) {
 	                                    <label for=""><?php echo LANG_VALUE_34; ?> *</label>
 	                                    <select name="payment_method" class="form-control select2" id="advFieldsStatus">
 	                                        <option value=""><?php echo LANG_VALUE_35; ?></option>
-	                                        <option value="PayPal"><?php echo LANG_VALUE_36; ?></option>
 	                                        <option value="Bank Deposit"><?php echo LANG_VALUE_38; ?></option>
 	                                    </select>
 	                                </div>
@@ -359,8 +358,15 @@ if(!isset($_SESSION['cart_p_id'])) {
                                         </div>
                                         <div class="col-md-12 form-group">
                                             <label for=""><?php echo LANG_VALUE_44; ?> <br><span style="font-size:12px;font-weight:normal;">(<?php echo LANG_VALUE_45; ?>)</span></label>
-                                            <textarea name="transaction_info" class="form-control" cols="30" rows="10"></textarea>
+                                            <textarea name="transaction_info" class="form-control" cols="3" ></textarea>
                                         </div>
+                                        
+                                        <div class="col-md-12 form-group">
+                                        <label for="fileUpload"><?php echo LANG_VALUE_164; ?> <br><span style="font-size:12px;font-weight:normal;">(<?php echo LANG_VALUE_165; ?>)</span></label>
+                                        <input type="file" name="transaction_info" id="fileUpload" class="form-control" accept=".pdf,.jpg,.jpeg,.png" />
+                                        </div>
+
+
                                         <div class="col-md-12 form-group">
                                             <input type="submit" class="btn btn-primary" value="<?php echo LANG_VALUE_46; ?>" name="form3">
                                         </div>

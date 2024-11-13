@@ -99,7 +99,7 @@ foreach ($result as $row) {
 	<link rel="stylesheet" href="assets/css/animate.min.css">
 	<link rel="stylesheet" href="assets/css/tree-menu.css">
 	<link rel="stylesheet" href="assets/css/select2.min.css">
-	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="assets/css/main.css?v=<?php echo time(); ?>">
 	<link rel="stylesheet" href="assets/css/responsive.css">
 
 	<?php
@@ -228,7 +228,6 @@ foreach ($result as $row) {
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
-	<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5993ef01e2587a001253a261&product=inline-share-buttons"></script>
 
 <?php echo $before_head; ?>
 
@@ -242,41 +241,10 @@ foreach ($result as $row) {
 </div>-->
 
 <!-- top bar -->
-<div class="top">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-sm-6 col-xs-12">
-				<div class="left">
-					<ul>
-						<li><i class="fa fa-phone"></i> <?php echo $contact_phone; ?></li>
-						<li><i class="fa fa-envelope-o"></i> <?php echo $contact_email; ?></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md-6 col-sm-6 col-xs-12">
-				<div class="right">
-					<ul>
-						<?php
-						$statement = $pdo->prepare("SELECT * FROM tbl_social");
-						$statement->execute();
-						$result = $statement->fetchAll(PDO::FETCH_ASSOC);
-						foreach ($result as $row) {
-							?>
-							<?php if($row['social_url'] != ''): ?>
-							<li><a href="<?php echo $row['social_url']; ?>"><i class="<?php echo $row['social_icon']; ?>"></i></a></li>
-							<?php endif; ?>
-							<?php
-						}
-						?>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 
 
-<div class="header">
+
+<div class="header" >
 	<div class="container">
 		<div class="row inner">
 			<div class="col-md-4 logo">
